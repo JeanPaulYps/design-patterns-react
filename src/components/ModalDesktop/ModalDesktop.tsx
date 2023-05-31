@@ -1,7 +1,7 @@
-import { Modal } from "../../interfaces/Modal.type";
+import { ModalInterface } from "../../interfaces/Modal.type";
 import classes from "./styles.module.css";
 
-function ModalDesktop(props: Modal) {
+function ModalDesktop(props: ModalInterface) {
   const modalVisibility = props.isOpen ? "" : classes["dialog--hidden"];
   return (
     <div className={modalVisibility}>

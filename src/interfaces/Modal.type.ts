@@ -1,6 +1,6 @@
-export interface Modal {
+export interface ModalInterface {
     isOpen: boolean,
     onExit: () => void,
-    
+
 
 }
