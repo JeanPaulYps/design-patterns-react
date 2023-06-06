@@ -1,19 +1,10 @@
-import { useState } from "react";
-import Modal from "./components/Modal/Modal";
+import FactoryDemo from "./factoryDemo";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const props = {
-    isOpen,
-    onExit: () => setIsOpen(false),
-  };
-
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}> Open modal </button>
-      <Modal {...props} />
+      <FactoryDemo />
     </>
   );
 }
