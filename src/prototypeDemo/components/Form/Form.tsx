@@ -14,7 +14,12 @@ function Form({ fields }: FormProps) {
     <>
       {fields.map(({ inputType, ...props }) => {
         const FormComponent = componentByFormType[inputType];
-        return <FormComponent key={getName(props.questionNumber)} {...props} />;
+        return (
+          <>
+            <FormComponent key={getName(props.questionNumber)} {...props} />
+            <br />
+          </>
+        );
       })}
     </>
   );

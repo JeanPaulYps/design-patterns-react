@@ -5,12 +5,11 @@ export enum InputType {
     Checkbox = "checkbox"
 }
 
-interface FieldDescription extends Input {
+export interface FieldDescription extends Input {
     inputType: InputType,
 }
 
 
 export interface FormProps {
     fields: FieldDescription[],
-
 }
