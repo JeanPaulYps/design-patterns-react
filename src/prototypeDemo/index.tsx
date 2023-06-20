@@ -1,6 +1,10 @@
 import { FormEventHandler, useRef, useState } from "react";
 import Form from "./components/Form/Form";
-import { FieldDescription, FormProps, InputType } from "./components/Form/Form.type";
+import {
+  FieldDescription,
+  FormProps,
+  InputType,
+} from "./components/Form/Form.type";
 import { Template, templates } from "./FormTemplates/templates";
 
 const descriptor: FormProps["fields"] = [
@@ -28,20 +32,17 @@ function PrototypeDemo() {
       event.preventDefault();
       const formData = new FormData(ref.current);
       console.log(event.target);
-      console.log(formData);
-      console.log(formData.get("template"));
       const templateKey = formData.get("template") as string;
       const selectedTemplate = templates[templateKey].template;
-      if (selectedTemplate) {
-        setTemplate(selectedTemplate);  
-
-      }
-  
+      if (selectedTemplate) setTemplate(selectedTemplate);
     }
   };
 
   return (
     <>
+      <h1>Escoge la plantilla sobre la cual quieres trabajar</h1>
+      <p>Tenemos las siguientes opciones disponibles para elegir:</p>
+      <br />
       <form onSubmit={onSubmit} ref={ref}>
         {Object.entries(templates).map(([key, template]) => (
           <>
@@ -56,11 +57,11 @@ function PrototypeDemo() {
             <br />
           </>
         ))}
+        <br />
         <button type="submit">Ver formulario</button>
       </form>
-      {
-        template && <Form fields={template} />
-      }
+      <br />
+      {template && <Form fields={template} />}
       {/* <Form fields={descriptor} /> */}
     </>
   );

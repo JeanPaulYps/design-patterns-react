@@ -1,0 +1,26 @@
+.character {
+    border: 3px solid salmon;
+    border-radius: 10px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+    font-family: 'Arial';
+    
+}
+
+.character__image {
+    height: 300px;
+    margin-top: 30px;
+}
+
+.character__name {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+:not(.character__name) {
+    font-weight: 100;
+}
